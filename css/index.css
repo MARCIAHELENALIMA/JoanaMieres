@@ -349,22 +349,22 @@ body {
 }
 
 .social-media-links {
-    height: 100vh;
+    width: 100%;
+    left: 0;
+    bottom: 0;
     position: absolute;
-    z-index: 2;
-    padding: 60px;
-    width: auto;
+    padding: 10px;
+    height: auto;
     display: flex;
-    padding-bottom: 35vh;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-left: 43vh;
 }
 
 .social-media {
     color: var(--container-color);
-    width: 21px;
-    ;
+    width: 35px;
     opacity: .6;
     margin: 8px;
     transition: all .4s ease;
@@ -374,7 +374,6 @@ body {
     opacity: 1;
     transform: scale(1.1);
 }
-
 .menu-home {
     width: 40%;
     height: 100vh;
@@ -388,43 +387,44 @@ body {
 }
 
 .menu-home a {
+    position: relative;
     padding: 10px;
     text-decoration: none;
     color: var(--first-color);
-    font-size: 30px;
-    opacity: .7;
-    transition: all .4s ease;
+    font-size: 50px;
 }
 
 .menu-home a::before {
-    content: "";
+    content: attr(data-text);
     position: absolute;
     top: 50%;
     left: 50%;
     display: flex;
     justify-content: center;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.8); /* Reduzimos o tamanho do texto em 80% */
     align-items: center;
-    font-size: 4em;
+    font-size: 2em;
     font-weight: 400;
     font-family: 'Belleza';
     color: var(--body-color);
-    z-index: 1;
+    z-index: -1;
     pointer-events: none;
     opacity: 0;
     letter-spacing: 100px;
-    transition: all .4s ease;
+    transition: opacity 0.4s ease, letter-spacing 0.4s ease, transform 0.4s ease;
+}
+.menu-home a:hover {
+    filter: contrast(1.4);
+    
 }
 
 .menu-home a:hover::before {
-    content: attr(data-text);
     opacity: 1;
     letter-spacing: 10px;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.menu-home a:hover {
-    color: hsl(32, 87%, 30%);
-}
 
 .navigation-links {
     display: flex;
