@@ -266,6 +266,7 @@ body {
 .header-image img {
     height: 100vh;
     float: left;
+    object-fit: cover;
 }
 
 .header-image {
@@ -391,7 +392,7 @@ body {
     padding: 10px;
     text-decoration: none;
     color: var(--first-color);
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .menu-home a::before {
