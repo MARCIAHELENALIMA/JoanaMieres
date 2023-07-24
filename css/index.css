@@ -38,7 +38,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--black);
+    background: var(--first-color);
     border-radius: 4px;
     width: 4px;
 }
@@ -65,7 +65,7 @@ html {
     position: fixed;
     z-index: 100;
     font-family: 'Belleza';
-    background-color: var(--black);
+    background-color: var(--body-color);
     color: var(--container-color);
     font-size: 70px;
     width: 100%;
@@ -80,7 +80,7 @@ body {
 }
 
 #header {
-    background: var(--body-color);
+    background: var(--container-color);
     height: 100vh;
     width: 100%;
     ;
@@ -384,6 +384,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     font-family: 'Belleza';
+    font-weight: bold;
 }
 
 .menu-home a {
@@ -404,10 +405,10 @@ body {
     justify-content: center;
     transform: translate(-50%, -50%);
     align-items: center;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 400;
     font-family: 'Belleza';
-    color: var(--container-color);
+    color: var(--body-color);
     z-index: 1;
     pointer-events: none;
     opacity: 0;
@@ -419,6 +420,10 @@ body {
     content: attr(data-text);
     opacity: 1;
     letter-spacing: 10px;
+}
+
+.menu-home a:hover {
+    color: hsl(32, 87%, 30%);
 }
 
 .navigation-links {
@@ -729,7 +734,6 @@ body {
     width: 28%;
     margin: 1.5%;
     background-color: var(--black);
-    ;
     display: inline-block;
     box-shadow: 0px 0px 25px rgb(0, 0, 0, .05);
     position: relative;
@@ -1464,7 +1468,7 @@ form button:hover {
     right: -150px;
     top: 40%;
     z-index: 4;
-    color: black;
+    color: var(--black);
     transition: all .4s ease;
 }
 
@@ -1563,7 +1567,7 @@ form button:hover {
     font-family: 'Allura';
     font-size: 16px;
     display: flex;
-    color: black;
+    color: var(--black);
     flex-direction: column;
     align-items: center;
     justify-content: center;
