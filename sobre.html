@@ -54,8 +54,8 @@
 
             <!--Navigator-Fullscreen-->
             <div class="navigation-links">
-                <a href="#" data-text="HOME" id="home-link">HOME</a>
-                <a href="#" data-text="SOBRE" id="sobre-link">SOBRE MIM</a>
+                <a href="index.html" data-text="HOME" id="home-link">HOME</a>
+                <a href="sobre.html" data-text="SOBRE" id="sobre-link">SOBRE MIM</a>
                 <a href="#" data-text="SERVIÇOS" id="serviços-link">SERVIÇOS</a>
                 <a href="#" data-text="DEPOIMENTOS" id="depoimentos-link">DEPOIMENTOS</a>
                 <a href="#" data-text="BLOG" id="blog-link">BLOG</a>
@@ -78,27 +78,6 @@
         <!--inicio da página SOBRE MIM-->
         <div id="sobre">
 
-            <!--Menu customização-->
-            <div class="color-changer">
-                <div class="color-panel">
-                    <img src="images/gear.png" alt="">
-                </div>
-                <div class="color-selector">
-                    <div class="heading">Customise</div>
-                    <div class="colors">
-                        <ul>
-                            <li>
-                                <a href="#0" class="color-yellow" title="color-yellow"></a>
-                            </li>
-                            <li>
-                                <a href="#0" class="color-pink" title="color-pink"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--Menu customização-->
-
             <!--about content-->
             <div id="about-content">
                 <div class="about-header">
@@ -106,12 +85,15 @@
                     <span class="header-caption">Sobre <span class="color"> mim</span></span>
                 </div>
                 <div class="about-main">
-                    <div class="about-first-paragraph wow">
+                    <div class="about-img">
+                        <img src="images/fotos (7).jpg" alt="Your Image">
+                        <img src="images/Logo_Complete.png" alt="Your Image">
+                    </div>
+                    <div class="about-first-paragraph">
                         <!--about description-->
                         <span class="about-first-line">
                             Terapeuta,
-                            <span class="color">escritora, professora</span>
-                            e empresária.
+                            <span class="color">escritora, professora</span> e empresária.
                         </span>
                         <br>
                         <span class="about-second-line">
@@ -167,14 +149,9 @@
                             vida e carreira:
                         </span>
                     </div>
-                    <!--about picture-->
-                    <div class="about-img">
-                        <img src="images/fotos (7).jpg" alt="Your Image">
-                        <img src="images/sobre mim.jpeg" alt="Your Image">
-                    </div>
                 </div>
                 <div class="services-content">
-                    <div class="service-one service wow">
+                    <div class="service-one service">
                         <div class="service-img">
                             <img src="images/coding.png" alt="service-one">
                         </div>
@@ -189,7 +166,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="service-three service wow">
+                    <div class="service-three service">
                         <div class="service-img">
                             <img src="images/coding.png" alt="service-three">
                         </div>
@@ -221,17 +198,37 @@
             <!--services end-->
             <div class="footer">
                 <div class="footer-text">
-                    <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> 2023 - Feito com
-                    🧡 por <a href="https://www.instagram.com/marciahelena.lima/" target="_blank">@Márcia Helena</a>
+                <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> 2023 - Feito com
+                🧡 por <a href="https://www.instagram.com/marciahelena.lima/" target="_blank">@Márcia Helena</a>
+                <div class="redes-footer">
+                <a href="https://www.instagram.com/joanamieres/" target="_blank"><img src="images/instagram.png"
+                            class="social-media-footer" alt="instagram-logo"></a>
+                <a href="https://wa.me/554197895343" target="_blank"><img src="images/whatsapp.png"
+                            class="social-media-footer" alt="whatsapp-logo"></a>
+                <a href="https://spotify.com/" target="_blank"><img src="images/spotify.png"
+                            class="social-media-footer" alt="spotify-logo"></a>
                 </div>
-                <div>
-                    <a href="https://www.instagram.com/joanamieres/" target="_blank"><img src="images/instagram.png"
-                            class="social-media" alt="instagram-logo"></a>
-                    <a href="https://wa.me/554197895343" target="_blank"><img src="images/whatsapp.png"
-                            class="social-media" alt="whatsapp-logo"></a>
-                    <a href="https://spotify.com/" target="_blank"><img src="images/spotify.png" class="social-media"
-                            alt="spotify-logo"></a>
                 </div>
+                <!--Menu customização-->
+                <div class="color-changer">
+                    <div class="color-panel">
+                        <img src="images/gear.png" alt="">
+                    </div>
+                    <div class="color-selector">
+                        <div class="heading">Customise</div>
+                        <div class="colors">
+                            <ul>
+                                <li>
+                                    <a href="#0" class="color-yellow" title="color-yellow"></a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="color-pink" title="color-pink"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--Menu customização-->
             </div>
             <!--copyright-section-->
         </div>
@@ -243,8 +240,6 @@
         <script src="js/particles.min.js"></script>
         <script src="js/index.js"></script>
 
-        <!--particles script-->
-        <script> particlesJS("particles", { "particles": { "number": { "value": 120, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.5, "random": false, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 0, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": false, "distance": 0, "color": " #E87F3A", "opacity": 0.24463576890600452, "width": 1.2626362266116362 }, "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true });</script>
 </body>
 
 </html>
