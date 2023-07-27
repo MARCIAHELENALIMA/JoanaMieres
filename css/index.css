@@ -382,7 +382,7 @@ body {
     flex-direction: column;
     padding-left: 15vh;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     font-family: 'Belleza';
     font-weight: bold;
 }
