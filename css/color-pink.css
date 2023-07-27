@@ -1,75 +1,75 @@
-
 :root {
-    --color: #E8A2B5;
+    --pink:  #E8A2B5;
+    --orange: #E87F3A;
 }
-*------------------*/
+
 ::-webkit-scrollbar{
     width: 4px;
-    color:var(--color);
+    color:var(--pink);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--color); 
+    background: var(--pink); 
     border-radius: 4px;
     width: 4px;
   }
   #breaker{
-      background-color: var(--color);
+      background-color: var(--pink);
   }
   .color{
-      color: var(--color);
+      color: var(--pink);
   }
   #about-content a{
-      color:var(--color) ;
+      color:var(--pink) ;
   }
   .cv a button{
-      background: var(--color);
+      background: var(--pink);
   }
   .service-img img{
-    background: var(--color);
-    box-shadow:0px 0px 0px 0px var(--color) ;
+    background: var(--pink);
+    box-shadow:0px 0px 0px 0px var(--pink) ;
   }
   .service:hover .service-img img{
-    box-shadow:0px 0px 0px 400px var(--color);
+    box-shadow:0px 0px 0px 400px var(--pink);
 }
 .html-progress{
-    background: var(--color);
+    background: var(--pink);
 }
 .js-progress{
-    background: var(--color);
+    background: var(--pink);
 }
 .adobe-progress{
-    background: var(--color);
+    background: var(--pink);
 }
 .php-progress{
-    background: var(--color);
+    background: var(--pink);
 }
 .jquery-progress{
-    background: var(--color);
+    background: var(--pink);
 }
 .seo-progress{
-    background: var(--color);
+    background: var(--pink);
 }
 .portfolio-text h2{
-    color: var(--color);
+    color: var(--pink);
 }
 .portfolio-text button{
-    color: var(--color);
-    border: 1.5px solid var(--color);
+    color: var(--pink);
+    border: 1.5px solid var(--pink);
 }
 .portfolio-text button::before{
-    background: var(--color);
+    background: var(--pink);
 }
 .portfolio-image img::before{
-    background: var(--color);
+    background: var(--pink);
 }
 .blog-date{
-    background: var(--color);
+    background: var(--pink);
 }
 form button{
-    background: var(--color);
+    background: var(--pink);
 }
 @media all and (max-width: 550px) and (min-width: 5px){
     .service:hover .service-img img{
-        box-shadow:0px 0px 0px 0px #E87F3A;
+        box-shadow:0px 0px 0px 0px var(--orange);
     }
 }
