@@ -18,37 +18,31 @@
   .color{
       color: var(--pink);
   }
-  #about-content a{
+  #sobre-content a{
       color:var(--pink) ;
   }
-  .cv a button{
+  .button-sobre a button{
       background: var(--pink);
   }
-  .service-img img{
+  .sobre-img img{
     background: var(--pink);
     box-shadow:0px 0px 0px 0px var(--pink) ;
   }
-  .service:hover .service-img img{
+  .sobre-destaques:hover .sobre-img img{
     box-shadow:0px 0px 0px 400px var(--pink);
 }
-.html-progress{
-    background: var(--pink);
+.menubar .first-span::before{
+    background-color: var(--pink);
 }
-.js-progress{
-    background: var(--pink);
+
+.menubar .second-span::before{
+    background-color: var(--pink);
 }
-.adobe-progress{
-    background: var(--pink);
+
+.menubar .third-span::before{
+    background-color: var(--pink);
 }
-.php-progress{
-    background: var(--pink);
-}
-.jquery-progress{
-    background: var(--pink);
-}
-.seo-progress{
-    background: var(--pink);
-}
+
 .portfolio-text h2{
     color: var(--pink);
 }
@@ -68,8 +62,13 @@
 form button{
     background: var(--pink);
 }
+
+.footer{
+    background: var(--pink);
+}
+
 @media all and (max-width: 550px) and (min-width: 5px){
-    .service:hover .service-img img{
+    .sobre-destaques:hover .sobre-img img{
         box-shadow:0px 0px 0px 0px var(--orange);
     }
 }
