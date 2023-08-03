@@ -144,7 +144,7 @@ body {
 }
 
 .menubar .first-span {
-    width: 35px;
+    width: 40px;
 }
 
 .menubar .first-span::before {
@@ -159,7 +159,7 @@ body {
 }
 
 .menubar .second-span {
-    width: 35px;
+    width: 40px;
 }
 
 .menubar .second-span::before {
@@ -174,7 +174,7 @@ body {
 }
 
 .menubar .third-span {
-    width: 35px;
+    width: 40px;
 }
 
 .menubar .third-span::before {
@@ -510,7 +510,7 @@ body {
     color: var(--black);
     text-align: justify;
     flex-direction: column;
-    display: flex;
+    display: block;
 }
 
 .about-first-paragraph .color {
@@ -526,7 +526,7 @@ body {
 }
 
 .about-second-line {
-    opacity: .8;
+    opacity: .9;
     font-size: 22px;
     font-weight: 200;
 }
@@ -598,7 +598,7 @@ body {
 }
 
 .sobre-destaques {
-    height: 380px;
+    height: 365px;
     width: 45%;
     margin: 1.5%;
     background-color: var(--orange);
@@ -1322,27 +1322,27 @@ form button:hover {
 }
 
 .footer {
-    background: var(--text-color);
+    background: var(--orange);
     width: 100%;
-    height: 110px;
+    height: 110px; 
     padding-left: 50px;
     padding-right: 50px;
-    color: var(--orange);
+    color: var(--black);
     display: flex;
-    font-family: 'Belleza';
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    z-index: 3;
+    position: relative; 
+    z-index: 4; 
 }
 
 .footer-text {
     display: flex;
     font-size: 20px;
     font-weight: 400;
+    font-family: 'Belleza';
     opacity: 1;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     width: 80%;
     justify-content: flex-start;
 }
@@ -1361,17 +1361,16 @@ form button:hover {
     height: auto;
     width: auto;
     display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 9px;
-    right: -150px;
-    z-index: 4;
-    color: var(--black);
+    flex-direction: column;
+    position: fixed;
+    bottom: 18px;
+    right: 0px;
     transition: all .4s ease;
+    align-items: flex-end;
 }
 
 .color-changer-active {
-    right: 0px;
+    bottom: 110px;
     transition: all .4s ease;
 }
 
@@ -1469,10 +1468,8 @@ form button:hover {
 }
 
 
+/*===== para abas e telefones grandes =====*/
 
-/*
-para abas e telefones grandes
-*/
 @media all and (max-width: 1065px) and (min-width: 551px) {
 
     .header-content {
@@ -1504,7 +1501,7 @@ para abas e telefones grandes
         display: none;
     }
 
-    .footer .footer-text{
+    .footer {
         width: 100%;
     }
 
@@ -1556,46 +1553,38 @@ para abas e telefones grandes
         width: auto;
     }
 
+    /*===== SOBRE MIM =====*/
+    .about-main {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .about-first-paragraph {
+        width: 95%; 
+        padding: 15px; 
+    }
+
     .about-header {
         font-size: 50px;
         padding: 15px;
     }
 
-    .about-first-paragraph .color {
-        font-size: 35px
-    }
-
     .about-first-line {
-        font-size: 32px;
+        font-size: 35px;
     }
 
-    .about-second-line {
-        font-size: 24px;
+    .about-img {
+        width: 90%; 
     }
-
-    .about-main {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .about-img img {
-        padding: 30px;
-    }
-
-    .button-sobre a button {
-        padding: 20px 30px;
+    .image-responsivo {
+        display: none;
     }
 
     .sobre-destaques {
-        height: auto;
         padding-bottom: 20px;
     }
 
-    .sobre-description h2 {
-        padding: 10px;
-        margin: 5px;
-        font-size: 22px;
-    }
+    /*=====     =====*/
 
     .skill {
         width: 40%;
@@ -1966,7 +1955,7 @@ Para dispositivos com largura menor, como telefone celular
         padding-left: 0px;
     }
 
-    .footer .footer-text{
+    .footer {
         width: 100%;
     }
 
@@ -2020,59 +2009,84 @@ Para dispositivos com largura menor, como telefone celular
         }
     }
 
+    #about-content {
+        padding: 25px;
+    }
+
+    .about-first-paragraph {
+        width: 85%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .about-first-line {
+        font-size: 32px;
+    }
+
+    .about-first-paragraph .color {
+        font-size: 32px;
+    }
+
+    .about-second-line {
+        font-size: 23px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .about-main {
+        width: 100%;
+        padding: 10px;
+        flex-direction: column; 
+        align-items: center;
+    }
+
     .header-content-box {
         z-index: 2;
         text-align: center;
         height: auto;
         padding-right: 0px;
         width: auto;
+    }
+    .about-img {
+        width: 90%;
+    }
 
+    .about-img img {
+        max-width: 100%;
+        border-radius: 40px;
+    }
+
+    .image-responsivo{
+        display: none;
     }
 
     .about-header {
         font-size: 35px;
     }
 
-    .about-first-paragraph .color {
-        font-size: 30px;
-    }
-
-    .about-first-line {
-        font-size: 28px;
-    }
-
-    .about-second-line {
-        font-size: 15px;
-    }
-
-    .about-main {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .about-img img {
-        width: 280px;
-        height: 220px;
-        padding: 5px;
-        border-radius: 10%;
-    }
-
-    .about-img {
-        width: 100%;
-        height: 250px;
-        text-align: center;
-        overflow: hidden;
-        border-radius: 10%;
-    }
-    
-
-    .sobre-destaques {
-        height: 320px;
+    .sobre-content {
         width: 90%;
     }
 
-    .sobre-img img {
-        height: 80px;
+    .sobre-destaques {
+        height: 400px;
+        width: 95%;
+    }
+
+    .sobre-description h2 {
+        font-size: 35px;
+        padding-bottom: 25px;
+    }
+
+    .text-sobre{
+        padding: 0px;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .skill {
