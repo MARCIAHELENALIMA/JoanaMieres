@@ -585,7 +585,7 @@ body {
 }
 
 .button-sobre a button:hover {
-    opacity: 5; 
+    opacity: 5;
     transform: scale(1.08);
 }
 
@@ -1324,15 +1324,15 @@ form button:hover {
 .footer {
     background: var(--orange);
     width: 100%;
-    height: 110px; 
+    height: 110px;
     padding-left: 50px;
     padding-right: 50px;
     color: var(--black);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; 
-    z-index: 4; 
+    position: relative;
+    z-index: 4;
 }
 
 .footer-text {
@@ -1533,9 +1533,11 @@ form button:hover {
         0% {
             transform: translateX(-100%)
         }
+
         50% {
             transform: translateX(0%)
         }
+
         100% {
             transform: translateX(100%)
         }
@@ -1545,9 +1547,11 @@ form button:hover {
         0% {
             transform: translateX(-100%)
         }
+
         50% {
             transform: translateX(0%)
         }
+
         100% {
             transform: translateX(100%)
         }
@@ -1563,13 +1567,13 @@ form button:hover {
 
     /*===== SOBRE MIM =====*/
     .about-main {
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
     }
 
     .about-first-paragraph {
-        width: 95%; 
-        padding: 15px; 
+        width: 95%;
+        padding: 15px;
     }
 
     .about-header {
@@ -1586,7 +1590,7 @@ form button:hover {
     }
 
     .about-img {
-        width: 90%; 
+        width: 90%;
     }
 
     .image-responsivo {
@@ -1945,14 +1949,16 @@ Para dispositivos com largura menor, como telefone celular
     .menu-home {
         width: 100%;
         display: flex;
+        height: auto;
         flex-direction: column;
+        padding-top: 70px;
         padding-left: 0;
         justify-content: center;
         align-items: center;
     }
 
     .social-media-links {
-        padding-left: 43vh;
+        padding-left: 0;
     }
 
     .redes-footer {
@@ -2045,7 +2051,7 @@ Para dispositivos com largura menor, como telefone celular
     .about-main {
         width: 100%;
         padding: 10px;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
     }
 
@@ -2056,6 +2062,7 @@ Para dispositivos com largura menor, como telefone celular
         padding-right: 0px;
         width: auto;
     }
+
     .about-img {
         width: 100%;
     }
@@ -2065,7 +2072,7 @@ Para dispositivos com largura menor, como telefone celular
         border-radius: 40px;
     }
 
-    .image-responsivo{
+    .image-responsivo {
         display: none;
     }
 
@@ -2091,7 +2098,7 @@ Para dispositivos com largura menor, como telefone celular
         padding-bottom: 25px;
     }
 
-    .text-sobre{
+    .text-sobre {
         padding: 0px;
         margin: 10px auto;
         font-size: 15px;
