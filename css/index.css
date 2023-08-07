@@ -367,18 +367,6 @@ body {
     transform: scale(1.1);
 }
 
-.social-media-footer {
-    width: 35px;
-    opacity: .6;
-    margin: 8px;
-    transition: all .4s ease;
-}
-
-.social-media-footer:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
 .color {
     color: var(--orange);
     transition: all .4s ease;
@@ -504,13 +492,12 @@ body {
 
 .about-first-paragraph {
     width: 65%;
-    padding: 30px;
+    padding: 0 30px;
     font-size: 20px;
     font-family: 'Belleza';
     font-weight: 400;
     color: var(--black);
     text-align: justify;
-    flex-direction: column;
     display: block;
 }
 
@@ -535,7 +522,7 @@ body {
 .text-sobre {
     opacity: 0.8;
     width: 100%;
-    padding: 30px;
+    padding-top: 20px;
     font-size: 25px;
     font-weight: 200;
     color: var(--black);
@@ -544,7 +531,7 @@ body {
 
 .about-main {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 100vw;
     height: auto;
@@ -1324,24 +1311,25 @@ form button:hover {
 .footer {
     background: var(--orange);
     width: 100%;
-    height: 85px;
-    padding-left: 50px;
-    padding-right: 50px;
+    min-height: 85px;
+    padding: 0 50px;
     color: var(--black);
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     z-index: 4;
+    flex-wrap: wrap;
 }
 
 .footer-text {
     font-size: 20px;
-    display: flex;
     font-family: 'Belleza';
     opacity: 1;
+    display: flex;
     flex-direction: column;
-    width: 50%;
+    flex: 1;
+    margin-right: 20px;
 }
 
 .footer-text a {
@@ -1351,11 +1339,31 @@ form button:hover {
 }
 
 .redes-footer {
-    width: 50%;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    flex-direction: row;
+}
+
+.redes-footer .social-media-footer {
+    width: 35px;
+    opacity: 0.6;
+    margin: 8px;
+    transition: all 0.4s ease;
+}
+
+.redes-footer .social-media-footer:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.social-media-footer {
+    width: 35px;
+    opacity: .6;
+    margin: 8px;
+    transition: all .4s ease;
+}
+
+.social-media-footer:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .color-changer {
@@ -1506,14 +1514,6 @@ form button:hover {
         display: none;
     }
 
-    .footer {
-        width: 100%;
-    }
-
-    .redes-footer {
-        padding-left: 25px;
-    }
-
     #breaker {
         height: 50vh;
         width: 200%;
@@ -1566,6 +1566,8 @@ form button:hover {
     .about-main {
         flex-direction: column;
         align-items: center;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .about-first-paragraph {
@@ -1958,17 +1960,18 @@ Para dispositivos com largura menor, como telefone celular
         padding-left: 0;
     }
 
-    .redes-footer {
-        padding-left: 0px;
-    }
-
     .redes-footer .social-media-footer {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
     }
 
     .footer {
-        width: 100%;
+        padding: 10px 15px;
+    }
+
+    .footer-text {
+        font-size: 13px;
+        margin-right: 0px;
     }
 
     .header-content-box {
@@ -2097,20 +2100,11 @@ Para dispositivos com largura menor, como telefone celular
     }
 
     .text-sobre {
-        padding: 0px;
         margin: 10px auto;
         font-size: 15px;
     }
 
-    .footer {
-        padding-left: 13px;
-        padding-right: 13px;
-    }
 
-    .footer-text {
-        font-size: 13px;
-        width: 60%;
-    }
 
     .skill {
         width: 80%;

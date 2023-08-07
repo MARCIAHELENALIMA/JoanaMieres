@@ -4,7 +4,7 @@ $(window).on('load', function () {
   gsap.to('#loader', 0, { display: "none", delay: 4 });
   gsap.to('#header', 0, { display: "block", delay: 1 });
   gsap.to('#navigation-content', 0, { display: "none" });
-  gsap.to('#navigation-content', 0, { display: "flex", delay: 1 });
+  gsap.to('#navigation-content', 0, { display: "flex", delay: 2 });
 });
 $(function () {
   $('.color-panel').on("click", function (e) {
