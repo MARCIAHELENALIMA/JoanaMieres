@@ -303,7 +303,7 @@ body {
 .navigation-links a:hover {
     filter: contrast(1.4);
     opacity: 1;
-    color: var(--orange-send)
+    color: var(--black)
 }
 
 .navigation-links a:hover::before {
