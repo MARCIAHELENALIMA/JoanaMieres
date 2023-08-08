@@ -1956,9 +1956,15 @@ Para dispositivos com largura menor, como telefone celular
         align-items: center;
     }
 
+    .button-sobre a button {
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+
     .social-media-links {
         padding-left: 0;
     }
+
     .footer {
         flex-direction: column;
         align-items: center;
@@ -2037,7 +2043,7 @@ Para dispositivos com largura menor, como telefone celular
     }
 
     #about-content {
-        padding: 5px
+        padding: 8px
     }
 
     .about-first-paragraph {
@@ -2112,11 +2118,13 @@ Para dispositivos com largura menor, como telefone celular
     }
 
     .text-sobre {
-        margin: 10px auto;
+        margin: 0px auto;
         font-size: 15px;
     }
 
-
+    .button-sobre {
+        padding-top: 10px;
+    }
 
     .skill {
         width: 80%;
