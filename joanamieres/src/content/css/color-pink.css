@@ -1,0 +1,74 @@
+:root {
+    --pink:  #E8A2B5;
+    --orange: #E87F3A;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    color:var(--pink);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--pink); 
+    border-radius: 4px;
+    width: 4px;
+  }
+  #breaker{
+      background-color: var(--pink);
+  }
+  .color{
+      color: var(--pink);
+  }
+  #sobre-content a{
+      color:var(--pink) ;
+  }
+  .button-sobre a button{
+      background: var(--pink);
+  }
+  .sobre-img img{
+    background: var(--pink);
+    box-shadow:0px 0px 0px 0px var(--pink) ;
+  }
+  .sobre-destaques:hover .sobre-img img{
+    box-shadow:0px 0px 0px 400px var(--pink);
+}
+.menubar .first-span::before{
+    background-color: var(--pink);
+}
+
+.menubar .second-span::before{
+    background-color: var(--pink);
+}
+
+.menubar .third-span::before{
+    background-color: var(--pink);
+}
+
+.portfolio-text h2{
+    color: var(--pink);
+}
+.portfolio-text button{
+    color: var(--pink);
+    border: 1.5px solid var(--pink);
+}
+.portfolio-text button::before{
+    background: var(--pink);
+}
+.portfolio-image img::before{
+    background: var(--pink);
+}
+.blog-date{
+    background: var(--pink);
+}
+form button{
+    background: var(--pink);
+}
+
+.footer{
+    background: var(--pink);
+}
+
+@media all and (max-width: 550px) and (min-width: 5px){
+    .sobre-destaques:hover .sobre-img img{
+        box-shadow:0px 0px 0px 0px var(--orange);
+    }
+}
