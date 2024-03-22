@@ -9,6 +9,7 @@ const CarrosselBlog = () => {
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
     const [posts, setPosts] = useState([]);
+    const [articleClass, setArticleClass] = useState('articleArticle')
 
     const handleCountPlus = () => {
         console.log("Antes da count fun:" + count)
@@ -37,6 +38,13 @@ const CarrosselBlog = () => {
         setContent(post.content);
         setAuthor(post.author.displayName);
     };
+    const handleArticleClass = () => {
+        if (articleClass === 'articleArticle') {
+            setArticleClass('articleClassExpand')
+        } else {
+            setArticleClass('articleArticle')
+        }
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -66,7 +74,6 @@ const CarrosselBlog = () => {
                             <div className='postagens'>
                                 {posts.map((post, index) => (
                                     <div key={post.id} className={count === index ? 'postagem' : 'postagemOff'} onClick={() => setCountIndex(index)}>
-                                        <img src={post.thumbnail} alt={`Thumbnail ${post.title}`} />
                                         <h3>{post.title}</h3>
                                     </div>
                                 ))}
@@ -79,14 +86,11 @@ const CarrosselBlog = () => {
                     </span>
                 </div>
                 <div className='LatestPost'>
-                    <span>Ultimo Post</span>
-                    <h3 className='LatestPostTitle'>{posts[0].title}</h3>
-                    <span className='LatestPostContet' dangerouslySetInnerHTML={{ __html: posts[0].content }} />
 
                 </div>
             </div>
-            <article className='articleArticle'>
-                <img src={Expantion} alt='Expandir' className='icon' />
+            <article className={articleClass}>
+                <img src={Expantion} alt='Expandir' className='icon' onClick={handleArticleClass} />
                 <span>
                     <h3 className='title' >{title}</h3>
                 </span>
