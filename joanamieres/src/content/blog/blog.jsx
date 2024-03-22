@@ -121,11 +121,11 @@ const Blog = () => {
                     <span className="header-caption">Blog</span>
                 </div>
                 <div id="about-content">
-                    <main>
-                        <div>
-                            <CarrosselBlog />
-                        </div>
-                    </main>
+
+                    <div>
+                        <CarrosselBlog />
+                    </div>
+
                 </div>
 
                 <div className="color-changer">

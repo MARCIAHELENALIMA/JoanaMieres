@@ -25,5 +25,6 @@ import Foto13 from './foto13.jpg'
 import Foto14 from './foto14.jpg'
 import Foto15 from './foto15.jpg'
 import ArrowWhite from './leftArrow.png'
+import Expantion from './expansion.png'
 export default PrincipalSFundo;
-export { ArrowWhite, Favicon, WhppIcon, InstaIcon, SpotifyIcon, LogoWhite, LogoCompleta, Coding, Gear, PlaceHolder2, Arrow, Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9, Foto10, Foto11, Foto12, Foto13, Foto14, Foto15, }
+export { ArrowWhite, Expantion, Favicon, WhppIcon, InstaIcon, SpotifyIcon, LogoWhite, LogoCompleta, Coding, Gear, PlaceHolder2, Arrow, Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9, Foto10, Foto11, Foto12, Foto13, Foto14, Foto15, }

@@ -1,58 +1,100 @@
-import { PlaceHolder2, Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, ArrowWhite } from '../images/importsImg'
-import { useState } from 'react';
-import '../css/blog.css'
-const CarrosselBlog = () => {
-    const [count, setCount] = useState(0)
-    const imgs = [Foto1, Foto2, Foto3, Foto4, Foto5, Foto6];
-    const handleCountPlus = () => {
-        if (count < 5) {
-            const sum = count + 1
-            setCount(sum)
-            console.log(count)
-        }
-    }
-    const handleCountMinus = () => {
-        if (count > 0) {
-            const minus = count - 1
-            setCount(minus)
-            console.log(count)
-        }
-    }
-    const setCountIndex = (index) => {
-        setCount(index)
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../css/blog.css';
+import { ArrowWhite, Expantion } from '../images/importsImg';
 
-    }
+const CarrosselBlog = () => {
+    const [count, setCount] = useState(0);
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
+    const [content, setContent] = useState('');
+    const [posts, setPosts] = useState([]);
+
+    const handleCountPlus = () => {
+        console.log("Antes da count fun:" + count)
+        if (count < posts.length - 1) {
+            console.log(count)
+            handleArticle(count + 1)
+        }
+    };
+
+    const handleCountMinus = (index) => {
+        if (count > 0) {
+            console.log("minus: " + count)
+            handleArticle(count - 1)
+        }
+    };
+
+    const setCountIndex = (index) => {
+        setCount(index);
+        handleArticle(index)
+    };
+
+    const handleArticle = (index) => {
+        setCount(index)
+        const post = posts[index];
+        setTitle(post.title);
+        setContent(post.content);
+        setAuthor(post.author.displayName);
+    };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(
+                    'https://www.googleapis.com/blogger/v3/blogs/8511051469662116569/posts?key=AIzaSyAkVzMMylXqjqjVPJWBIIbsVEbYpTuF-aI'
+                );
+                setPosts(response.data.items);
+            } catch (error) {
+                console.error('Erro ao buscar posts:', error);
+            }
+        };
+        fetchData();
+    }, []);
+
 
     return (
-        <>
-            <h1>Postagens</h1>
-            <div className="postagensDiv">
-                <span className="Arrows" onClick={handleCountMinus}>
-                    <img src={ArrowWhite} alt='LeftArrow' className='LeftArrow' onClick={handleCountMinus} />
-                </span>
-                <div className='postagensContainer'>
-                    <div className='postagens'>
-                        {imgs.map((img, index) => (
-                            <div className={count === index ? 'postagem' : 'postagemOff'} onClick={() => setCountIndex(index)}>
-                                <img src={img} alt='ThumbnailPost' className='ThumbnailPost' />
-                                <h3>Titulo Postagem</h3>
-
+        < section className="container">
+            <div>
+                <h1 className='containerTitle'>Postagens</h1>
+                <div className="postagensDiv">
+                    <span className="Arrows" onClick={handleCountMinus}>
+                        <img src={ArrowWhite} alt='RigthArrow' className='LeftArrow' onClick={handleCountMinus} />
+                    </span>
+                    <div className='containerPosts'>
+                        <div className='postagensContainer'>
+                            <div className='postagens'>
+                                {posts.map((post, index) => (
+                                    <div key={post.id} className={count === index ? 'postagem' : 'postagemOff'} onClick={() => setCountIndex(index)}>
+                                        <img src={post.thumbnail} alt={`Thumbnail ${post.title}`} />
+                                        <h3>{post.title}</h3>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+
                     </div>
-                    <ul>
-                        {[...Array(6)].map((index) => (
-                            <li key={index} className={`alocation ${count === index ? 'active' : 'hidden'}`} id={`alocation${index + 1}`}>a</li>
-                        ))}
-                    </ul>
+                    <span className="Arrows" onClick={handleCountPlus}>
+                        <img src={ArrowWhite} alt='RigthArrow' className='RigthArrow' onClick={handleCountPlus} />
+                    </span>
                 </div>
-                <span className="Arrows" onClick={handleCountPlus}>
-                    <img src={ArrowWhite} alt='RigthArrow' className='RigthArrow' onClick={handleCountPlus} />
+                <div className='LatestPost'>
+                    <span>Ultimo Post</span>
+                    <h3 className='LatestPostTitle'>{posts[0].title}</h3>
+                    <span className='LatestPostContet' dangerouslySetInnerHTML={{ __html: posts[0].content }} />
+
+                </div>
+            </div>
+            <article className='articleArticle'>
+                <img src={Expantion} alt='Expandir' className='icon' />
+                <span>
+                    <h3 className='title' >{title}</h3>
                 </span>
 
-            </div>
-        </>
+                <div className="contentArticle" dangerouslySetInnerHTML={{ __html: content }} />
+            </article>
+        </section>
     );
-}
+};
 
 export default CarrosselBlog;
