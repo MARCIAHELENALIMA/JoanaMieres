@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/blog.css';
-import { ArrowWhite, Expantion } from '../images/importsImg';
+import { ArrowWhite, Expantion, PlaceHolder2 } from '../images/importsImg';
 
 const CarrosselBlog = () => {
+    const [posts, setPosts] = useState([]);
     const [count, setCount] = useState(0);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
-    const [posts, setPosts] = useState([]);
     const [articleClass, setArticleClass] = useState('articleArticle')
+    const [contentArticle, setContentArticle] = useState('contentArticle')
+
 
     const handleCountPlus = () => {
         console.log("Antes da count fun:" + count)
@@ -38,12 +40,12 @@ const CarrosselBlog = () => {
         setContent(post.content);
         setAuthor(post.author.displayName);
     };
+
     const handleArticleClass = () => {
-        if (articleClass === 'articleArticle') {
-            setArticleClass('articleClassExpand')
-        } else {
-            setArticleClass('articleArticle')
-        }
+        setArticleClass(articleClass === 'articleArticle' ? 'articleClassExpand' : 'articleArticle');
+        setContentArticle(contentArticle === 'contentArticle' ? 'contentArticleExpand' : 'contentArticle');
+
+
     }
 
     useEffect(() => {
@@ -64,7 +66,7 @@ const CarrosselBlog = () => {
     return (
         < section className="container">
             <div>
-                <h1 className='containerTitle'>Postagens</h1>
+                <h1 className='containerTitle'>Tópicos</h1>
                 <div className="postagensDiv">
                     <span className="Arrows" onClick={handleCountMinus}>
                         <img src={ArrowWhite} alt='RigthArrow' className='LeftArrow' onClick={handleCountMinus} />
@@ -74,6 +76,7 @@ const CarrosselBlog = () => {
                             <div className='postagens'>
                                 {posts.map((post, index) => (
                                     <div key={post.id} className={count === index ? 'postagem' : 'postagemOff'} onClick={() => setCountIndex(index)}>
+                                        <img src={PlaceHolder2} className='promocaoImg' alt="" />
                                         <h3>{post.title}</h3>
                                     </div>
                                 ))}
@@ -86,7 +89,11 @@ const CarrosselBlog = () => {
                     </span>
                 </div>
                 <div className='LatestPost'>
-
+                    <img src={PlaceHolder2} alt='Promoção' className='promocaoImg' />
+                    <span>
+                        <h3>Promoção!</h3>
+                        <p>Descrição da promoção, fale sobre o que sua promoção dá!</p>
+                    </span>
                 </div>
             </div>
             <article className={articleClass}>
@@ -95,7 +102,7 @@ const CarrosselBlog = () => {
                     <h3 className='title' >{title}</h3>
                 </span>
 
-                <div className="contentArticle" dangerouslySetInnerHTML={{ __html: content }} />
+                <div className={contentArticle} dangerouslySetInnerHTML={{ __html: content }} />
             </article>
         </section>
     );

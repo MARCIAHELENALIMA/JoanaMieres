@@ -45,8 +45,7 @@
     overflow: auto;
     width: 500px;
     padding: 10px;
-    position: relative;
-    z-index: 999;
+
     justify-self: center;
 
 }
@@ -54,14 +53,15 @@
 .postagem {
     background-color: #FFCBA9;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
 }
 
 .postagemOff {
     background-color: #FFCBA9;
+    color: rgb(54, 54, 54);
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     opacity: 0.5;
     text-align: center;
@@ -131,6 +131,18 @@
 
 }
 
+.articleClassExpand {
+    background-color: #F3D3C5;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    transform: translateX(-10px);
+    z-index: 3;
+    width: 50%;
+    margin: auto;
+
+}
+
 .postagensContainer {
     display: flex;
     flex-direction: column;
@@ -145,6 +157,11 @@
     color: black;
     height: 100px;
     width: 400px;
-    overflow: auto;
     margin-top: 150px;
+    display: flex;
+    gap: 10px;
+}
+
+.promocaoImg {
+    width: 100px;
 }
