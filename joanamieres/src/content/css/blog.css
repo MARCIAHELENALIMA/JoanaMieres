@@ -4,6 +4,7 @@
 
 .postagensDiv {
     display: flex;
+    flex-direction: column;
 
 
 }
@@ -41,9 +42,11 @@
 
 .postagens {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     overflow: auto;
     width: 500px;
+    height: 400px;
     padding: 10px;
 
     justify-self: center;
@@ -143,10 +146,7 @@
 
 }
 
-.postagensContainer {
-    display: flex;
-    flex-direction: column;
-}
+.postagensContainer {}
 
 .LatestPost {
     background-color: #F3D3C5;
@@ -164,4 +164,22 @@
 
 .promocaoImg {
     width: 100px;
+}
+
+.pesquisaInput {
+    transition: 0.3s;
+    padding: 7px;
+    border: 1px solid #d67230;
+    border-radius: 3px;
+}
+
+.pesquisaInput:focus {
+    transition: 0.3s;
+    padding: 10px;
+    outline: #d67230;
+}
+
+.formPesquisas {
+    display: flex;
+    gap: 10px;
 }

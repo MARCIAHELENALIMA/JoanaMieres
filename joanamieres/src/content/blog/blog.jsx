@@ -4,6 +4,7 @@ import $ from 'jquery'
 import { useEffect } from 'react';
 import CarrosselBlog from './carrosselBlog';
 import '../css/blog.css'
+import EmbeddedSite from './embbedSite';
 const Blog = () => {
     useEffect(() => {
         // Código para animação do loader

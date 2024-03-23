@@ -1,45 +1,52 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
 import App from "../config/config";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginOn = () => {
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const auth = getAuth();
-
+    const [error, setError] = useState("");
+    const [redirectToEmbeddedSite, setRedirectToEmbeddedSite] = useState(false);
     App();
-    const handleEmail = (event) => {
-        setEmail(event.target.value); // Corrigido para acessar event.target.value
+    // Obtenha a instância de autenticação
+    const auth = getAuth();
+    const navigate = useNavigate();
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
     }
 
-    const handlePassword = (event) => {
-        setPassword(event.target.value); // Corrigido para acessar event.target.value
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
     }
 
-    const logar = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
         signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Autenticação bem-sucedida, faça algo aqui se necessário
-                const user = userCredential.user;
-                console.log("logado")
+            .then(() => {
+                console.log('entrei')
+                setRedirectToEmbeddedSite(true)
             })
             .catch((error) => {
-                // Erro na autenticação
-                const errorCode = error.code;
                 const errorMessage = error.message;
-                // Trate o erro aqui, se necessário
+                setError(errorMessage);
             });
     }
-
+    if (redirectToEmbeddedSite) {
+        navigate('/blog/admindashboard')
+    }
     return (
-        <>
-            <input type="text" placeholder="Seu Email" value={email} onChange={handleEmail} className="inputEmail" />
-            <input type="password" placeholder="Sua Senha" value={password} onChange={handlePassword} className="inputPassword" />
-            <input type="button" value="Entrar" onClick={logar} />
-        </>
-    );
+        <section className="LoginForm">
+            <form onSubmit={handleSubmit}>
+                <h1>Fazer Login</h1>
+                <input type="text" placeholder="Seu Email" id="email" value={email} onChange={handleEmailChange} />
+                <input type="password" placeholder="Sua Senha" id="password" value={password} onChange={handlePasswordChange} />
+                {error && <p>{error}</p>}
+                <input type="submit" value="Entrar" />
+            </form>
+        </section>
+    )
 }
 
 export default LoginOn;

@@ -9,32 +9,28 @@ const CarrosselBlog = () => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
-    const [articleClass, setArticleClass] = useState('articleArticle')
-    const [contentArticle, setContentArticle] = useState('contentArticle')
-
+    const [articleClass, setArticleClass] = useState('articleArticle');
+    const [contentArticle, setContentArticle] = useState('contentArticle');
+    const [pesquisaValue, setPesquisaValue] = useState('');
 
     const handleCountPlus = () => {
-        console.log("Antes da count fun:" + count)
         if (count < posts.length - 1) {
-            console.log(count)
-            handleArticle(count + 1)
+            setCount(count + 1);
         }
     };
 
-    const handleCountMinus = (index) => {
+    const handleCountMinus = () => {
         if (count > 0) {
-            console.log("minus: " + count)
-            handleArticle(count - 1)
+            setCount(count - 1);
         }
     };
 
     const setCountIndex = (index) => {
         setCount(index);
-        handleArticle(index)
+        handleArticle(index);
     };
 
     const handleArticle = (index) => {
-        setCount(index)
         const post = posts[index];
         setTitle(post.title);
         setContent(post.content);
@@ -44,9 +40,12 @@ const CarrosselBlog = () => {
     const handleArticleClass = () => {
         setArticleClass(articleClass === 'articleArticle' ? 'articleClassExpand' : 'articleArticle');
         setContentArticle(contentArticle === 'contentArticle' ? 'contentArticleExpand' : 'contentArticle');
+    };
 
-
-    }
+    const handlePesquisaSubmit = (e) => {
+        e.preventDefault();
+        pesquisarNoBlogger(pesquisaValue);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,17 +61,42 @@ const CarrosselBlog = () => {
         fetchData();
     }, []);
 
+    // Função para pesquisar publicações no Blogger
+    async function pesquisarNoBlogger(query) {
+        // URL da API do Blogger para pesquisa de postagens
+        const url = `https://www.googleapis.com/blogger/v3/blogs/8511051469662116569/posts/search?q=${encodeURIComponent(query)}&key=AIzaSyAkVzMMylXqjqjVPJWBIIbsVEbYpTuF-aI`;
+
+        try {
+            // Faça a solicitação de pesquisa
+            const response = await fetch(url);
+            if (response.ok) {
+                // Pesquisa bem-sucedida
+                const responseData = await response.json();
+                console.log('Resultados da pesquisa:', responseData);
+                setPosts(responseData.items);
+                setCount(0);
+            } else {
+                // Falha na pesquisa
+                const errorMessage = await response.text();
+                console.error('Erro na pesquisa:', errorMessage);
+            }
+        } catch (error) {
+            console.error('Erro na pesquisa:', error);
+        }
+    }
 
     return (
-        < section className="container">
+        <section className="container">
             <div>
                 <h1 className='containerTitle'>Tópicos</h1>
                 <div className="postagensDiv">
-                    <span className="Arrows" onClick={handleCountMinus}>
-                        <img src={ArrowWhite} alt='RigthArrow' className='LeftArrow' onClick={handleCountMinus} />
-                    </span>
                     <div className='containerPosts'>
                         <div className='postagensContainer'>
+                            <form id='pesquisas' className='formPesquisas' onSubmit={handlePesquisaSubmit}>
+                                <input type='text' className="pesquisaInput" placeholder="Digite sua pesquisa.." value={pesquisaValue} onChange={(e) => setPesquisaValue(e.target.value)} />
+                                <button type="submit">Pesquisar</button>
+                            </form>
+
                             <div className='postagens'>
                                 {posts.map((post, index) => (
                                     <div key={post.id} className={count === index ? 'postagem' : 'postagemOff'} onClick={() => setCountIndex(index)}>
@@ -82,11 +106,7 @@ const CarrosselBlog = () => {
                                 ))}
                             </div>
                         </div>
-
                     </div>
-                    <span className="Arrows" onClick={handleCountPlus}>
-                        <img src={ArrowWhite} alt='RigthArrow' className='RigthArrow' onClick={handleCountPlus} />
-                    </span>
                 </div>
                 <div className='LatestPost'>
                     <img src={PlaceHolder2} alt='Promoção' className='promocaoImg' />
@@ -101,7 +121,6 @@ const CarrosselBlog = () => {
                 <span>
                     <h3 className='title' >{title}</h3>
                 </span>
-
                 <div className={contentArticle} dangerouslySetInnerHTML={{ __html: content }} />
             </article>
         </section>
